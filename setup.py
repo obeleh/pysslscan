@@ -36,7 +36,8 @@ setup(
     ],
     install_requires=[
         "flextls >= 0.3",
-        "six >= 1.4.1"
+        "six >= 1.4.1",
+        "colorama >= 0.2.4"
     ],
     packages=find_packages(exclude=["*.tests", "*.tests.*"]),
     include_package_data=True,
