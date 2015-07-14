@@ -1,6 +1,12 @@
+from colorama import Fore
+from colorama import init
+
+init(autoreset=False)
+
+
 def rating2color(color, level):
     # ToDo:
-    if level == None:
+    if level is None:
         return color.RESET
     if level < 3:
         return color.OK
@@ -14,18 +20,17 @@ def rating2color(color, level):
 class ColorConsole(object):
     def __init__(self):
         #self.config = config
-        CSI = "\33["
-        self.CSI = CSI
+
         self.colors = {
-            "RESET": CSI + "0m",
-            "BLACK": CSI + "0;30m",
-            "RED": CSI + "0;31m",
-            "GREEN": CSI + "0;32m",
-            "YELLOW": CSI + "0;33m",
-            "BLUE": CSI + "0;34m",
-            "MAGENTA": CSI + "0;35m",
-            "CYAN": CSI + "0;36m",
-            "GRAY": CSI + "0;37m"
+            "RESET": Fore.RESET,
+            "BLACK": Fore.BLACK,
+            "RED": Fore.RED,
+            "GREEN": Fore.GREEN,
+            "YELLOW": Fore.YELLOW,
+            "BLUE": Fore.BLUE,
+            "MAGENTA": Fore.MAGENTA,
+            "CYAN": Fore.CYAN
+            # "GRAY": Fore.GRAY
         }
 
         self.mapped_colors = {}
